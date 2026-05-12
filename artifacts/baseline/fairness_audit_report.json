@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-05-12T09:57:51.158047",
+  "model_version": "baseline_v1",
+  "split": "validation",
+  "threshold": 0.25,
+  "by_sex": {
+    "approval_rates": {
+      "female": 0.7358490566037735,
+      "male": 0.7216494845360825
+    },
+    "demographic_parity_difference": 0.0142,
+    "disparate_impact_ratio": 0.9807,
+    "demographic_parity_violation": false,
+    "disparate_impact_violation": false,
+    "true_positive_rates": {
+      "female": 0.8055555555555556,
+      "male": 0.8115942028985508
+    },
+    "equal_opportunity_difference": 0.006,
+    "equal_opportunity_violation": false
+  },
+  "by_age_group": {
+    "approval_rates": {
+      "18-25": 0.8157894736842105,
+      "26-35": 0.7045454545454546,
+      "36-45": 0.75,
+      "46+": 0.6071428571428571
+    },
+    "demographic_parity_difference": 0.2086,
+    "disparate_impact_ratio": 0.7442,
+    "demographic_parity_violation": true,
+    "disparate_impact_violation": true,
+    "true_positive_rates": {
+      "18-25": 0.8695652173913043,
+      "26-35": 0.75,
+      "36-45": 0.8709677419354839,
+      "46+": 0.7333333333333333
+    },
+    "equal_opportunity_difference": 0.1376,
+    "equal_opportunity_violation": true
+  }
+}

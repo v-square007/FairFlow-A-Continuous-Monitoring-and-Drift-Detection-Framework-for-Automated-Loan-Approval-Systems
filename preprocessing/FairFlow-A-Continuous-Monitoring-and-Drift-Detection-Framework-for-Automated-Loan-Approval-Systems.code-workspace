@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../../../Downloads/fair-flow/artifacts"
+		},
+		{
+			"path": "../../../../../../Downloads/fair-flow/data"
+		},
+		{
+			"path": "../../../../../../Downloads/fair-flow/drift_fairness_detection"
+		},
+		{
+			"path": "../../../../../../Downloads/fair-flow/model"
+		},
+		{
+			"path": "../../../../../../Downloads/fair-flow/preprocessing"
+		}
+	],
+	"settings": {}
+}

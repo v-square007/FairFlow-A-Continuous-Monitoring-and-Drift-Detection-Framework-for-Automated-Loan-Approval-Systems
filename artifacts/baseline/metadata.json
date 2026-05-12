@@ -1,0 +1,81 @@
+{
+  "model_version": "baseline_v1",
+  "model_file": "artifacts/model.pkl",
+  "training_date": "2026-05-12 09:57:51",
+  "decision_threshold": 0.25,
+  "fairness_weighting_enabled": true,
+  "hyperparameters": {
+    "n_estimators": 100,
+    "max_depth": 3,
+    "learning_rate": 0.05,
+    "scale_pos_weight": 0.42857142857142855,
+    "subsample": 0.8,
+    "colsample_bytree": null
+  },
+  "best_params_from_cv": {
+    "gamma": 0.1,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_child_weight": 1,
+    "n_estimators": 100,
+    "subsample": 0.8
+  },
+  "training_info": {
+    "cv_auc_score": 0.7925,
+    "validation_auc_score": 0.6637,
+    "hyperparameter_tuning_method": "5-fold GridSearchCV",
+    "training_samples": 700,
+    "validation_samples": 150,
+    "test_samples": 150
+  },
+  "performance_metrics": {
+    "validation": {
+      "auc_roc": 0.6637,
+      "accuracy": 0.7067,
+      "bad_precision": 0.5122,
+      "bad_recall": 0.4667,
+      "bad_f1": 0.4884,
+      "good_precision": 0.7798,
+      "good_recall": 0.8095,
+      "good_f1": 0.7944
+    },
+    "test": {
+      "auc_roc": 0.7799,
+      "accuracy": 0.7733,
+      "bad_precision": 0.6038,
+      "bad_recall": 0.7111,
+      "bad_f1": 0.6531,
+      "good_precision": 0.866,
+      "good_recall": 0.8,
+      "good_f1": 0.8317
+    }
+  },
+  "fairness_metrics": {
+    "sex": {
+      "demographic_parity": 0.0142,
+      "disparate_impact": 0.9807,
+      "equal_opportunity": 0.006
+    },
+    "age_group": {
+      "demographic_parity": 0.2086,
+      "disparate_impact": 0.7442
+    }
+  },
+  "features": {
+    "count": 8,
+    "names": [
+      "Job",
+      "Housing",
+      "Saving accounts",
+      "Checking account",
+      "Credit amount",
+      "Duration",
+      "Purpose",
+      "Debt_ratio"
+    ],
+    "sensitive_attributes": [
+      "Sex",
+      "Age_group"
+    ]
+  }
+}
