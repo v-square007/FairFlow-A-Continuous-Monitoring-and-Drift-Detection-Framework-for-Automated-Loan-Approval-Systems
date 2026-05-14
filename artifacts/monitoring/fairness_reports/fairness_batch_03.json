@@ -1,0 +1,106 @@
+{
+  "batch_id": "batch_03",
+  "timestamp": "2026-05-13T09:22:44.690884",
+  "sample_size": 150,
+  "fairness_metrics": {
+    "Sex": {
+      "attribute": "Sex",
+      "timestamp": "2026-05-13T09:22:44.690891",
+      "groups": {
+        "male": {
+          "size": 107,
+          "approval_rate": 0.6542056074766355,
+          "tpr": 0.8076923076923077
+        },
+        "female": {
+          "size": 43,
+          "approval_rate": 0.627906976744186,
+          "tpr": 0.7777777777777778
+        }
+      },
+      "approval_rates": {
+        "male": 0.6542056074766355,
+        "female": 0.627906976744186
+      },
+      "true_positive_rates": {
+        "male": 0.8076923076923077,
+        "female": 0.7777777777777778
+      },
+      "demographic_parity_difference": 0.0263,
+      "disparate_impact_ratio": 0.9598,
+      "equal_opportunity_difference": 0.0299
+    },
+    "Age_group": {
+      "attribute": "Age_group",
+      "timestamp": "2026-05-13T09:22:44.691107",
+      "groups": {
+        "26-35": {
+          "size": 66,
+          "approval_rate": 0.6212121212121212,
+          "tpr": 0.8292682926829268
+        },
+        "46+": {
+          "size": 32,
+          "approval_rate": 0.8125,
+          "tpr": 0.9629629629629629
+        },
+        "36-45": {
+          "size": 31,
+          "approval_rate": 0.6451612903225806,
+          "tpr": 0.6538461538461539
+        },
+        "18-25": {
+          "size": 21,
+          "approval_rate": 0.47619047619047616,
+          "tpr": 0.6363636363636364
+        }
+      },
+      "approval_rates": {
+        "26-35": 0.6212121212121212,
+        "46+": 0.8125,
+        "36-45": 0.6451612903225806,
+        "18-25": 0.47619047619047616
+      },
+      "true_positive_rates": {
+        "26-35": 0.8292682926829268,
+        "46+": 0.9629629629629629,
+        "36-45": 0.6538461538461539,
+        "18-25": 0.6363636363636364
+      },
+      "demographic_parity_difference": 0.3363,
+      "disparate_impact_ratio": 0.5861,
+      "equal_opportunity_difference": 0.3266
+    }
+  },
+  "violations": [
+    {
+      "type": "demographic_parity_violation",
+      "attribute": "Age_group",
+      "value": 0.3363,
+      "threshold": 0.1,
+      "severity": "critical",
+      "message": "Demographic parity difference (0.3363) exceeds threshold (0.1)"
+    },
+    {
+      "type": "disparate_impact_violation",
+      "attribute": "Age_group",
+      "value": 0.5861,
+      "threshold": 0.8,
+      "severity": "critical",
+      "message": "Disparate impact ratio (0.5861) below threshold (0.8)"
+    },
+    {
+      "type": "equal_opportunity_violation",
+      "attribute": "Age_group",
+      "value": 0.3266,
+      "threshold": 0.1,
+      "severity": "critical",
+      "message": "Equal opportunity difference (0.3266) exceeds threshold (0.1)"
+    }
+  ],
+  "summary": {
+    "total_violations": 3,
+    "critical_violations": 3,
+    "warning_violations": 0
+  }
+}

@@ -34,7 +34,25 @@ from fairness_monitoring_module import FairnessMonitor
 from batch_processing_module import BatchProcessor, create_batches_from_data
 from alert_system_module import AlertSystem
 
-
+def convert_numpy_types(obj):
+    """Convert numpy types to native Python types for JSON serialization."""
+    import numpy as np
+    
+    if isinstance(obj, dict):
+        return {key: convert_numpy_types(value) for key, value in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_numpy_types(item) for item in obj]
+    elif isinstance(obj, np.integer):
+        return int(obj)
+    elif isinstance(obj, np.floating):
+        return float(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, np.bool_):
+        return bool(obj)
+    else:
+        return obj
+    
 def main():
     print("="*80)
     print("PART 2: DRIFT & FAIRNESS MONITORING SYSTEM")
@@ -186,7 +204,7 @@ def main():
         # Save drift report
         drift_report_path = DRIFT_REPORTS_DIR / f"drift_{batch_id}.json"
         with open(drift_report_path, 'w') as f:
-            json.dump(drift_results, f, indent=2)
+            json.dump(convert_numpy_types(drift_results), f, indent=2)
         
         # ----------------------------------------------------------------
         # 4.3: Fairness Monitoring

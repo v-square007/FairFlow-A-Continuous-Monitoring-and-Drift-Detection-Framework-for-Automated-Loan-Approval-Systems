@@ -1,0 +1,49 @@
+{
+  "batch_id": "batch_02",
+  "timestamp": "2026-05-13T09:22:44.684322",
+  "alert_count": 3,
+  "alerts": [
+    {
+      "alert_id": "alert_0006",
+      "timestamp": "2026-05-13T09:22:44.684308",
+      "type": "demographic_parity_violation",
+      "severity": "critical",
+      "message": "Demographic parity difference (0.3363) exceeds threshold (0.1)",
+      "batch_id": "batch_02",
+      "details": {
+        "attribute": "Age_group",
+        "value": 0.3363,
+        "threshold": 0.1
+      },
+      "status": "active"
+    },
+    {
+      "alert_id": "alert_0007",
+      "timestamp": "2026-05-13T09:22:44.684311",
+      "type": "disparate_impact_violation",
+      "severity": "critical",
+      "message": "Disparate impact ratio (0.5861) below threshold (0.8)",
+      "batch_id": "batch_02",
+      "details": {
+        "attribute": "Age_group",
+        "value": 0.5861,
+        "threshold": 0.8
+      },
+      "status": "active"
+    },
+    {
+      "alert_id": "alert_0008",
+      "timestamp": "2026-05-13T09:22:44.684312",
+      "type": "equal_opportunity_violation",
+      "severity": "critical",
+      "message": "Equal opportunity difference (0.3266) exceeds threshold (0.1)",
+      "batch_id": "batch_02",
+      "details": {
+        "attribute": "Age_group",
+        "value": 0.3266,
+        "threshold": 0.1
+      },
+      "status": "active"
+    }
+  ]
+}

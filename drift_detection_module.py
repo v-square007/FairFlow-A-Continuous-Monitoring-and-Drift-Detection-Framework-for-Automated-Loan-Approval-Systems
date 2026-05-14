@@ -113,7 +113,7 @@ class DriftDetector:
         statistic, p_value = stats.ks_2samp(baseline_values, current_values)
         
         # Drift detected if p-value < threshold (reject null hypothesis of same distribution)
-        drift_detected = p_value < threshold
+        drift_detected = bool(p_value < threshold)
         
         # Calculate additional metrics
         mean_shift = current_values.mean() - baseline_values.mean()
@@ -167,7 +167,7 @@ class DriftDetector:
         # Chi-square test
         statistic, p_value = stats.chisquare(current_counts, expected_counts)
         
-        drift_detected = p_value < threshold
+        drift_detected = bool(p_value < threshold)
         
         # Find categories with largest shifts
         baseline_props = {cat: baseline_dist.get(cat, 0) / len(self.baseline_data) 
@@ -238,7 +238,7 @@ class DriftDetector:
         # Mean shift in predictions
         mean_shift = current_predictions.mean() - self.baseline_predictions.mean()
         
-        drift_detected = kl_divergence > threshold
+        drift_detected = bool(kl_divergence > threshold)
         
         return {
             "method": "kl_divergence",
@@ -254,19 +254,8 @@ class DriftDetector:
     
     
     def detect_all_features_drift(self, current_data: pd.DataFrame,
-                                  feature_config: Dict = None,
-                                  threshold: float = 0.05) -> Dict:
-        """
-        Detect drift across all features.
-        
-        Args:
-            current_data: Current batch data
-            feature_config: Dictionary mapping features to test methods and thresholds
-            threshold: Default threshold if not specified per-feature
-        
-        Returns:
-            Dictionary with results for all features
-        """
+                              feature_config: Dict = None,
+                              threshold: float = 0.05) -> Dict:
         results = {
             "summary": {
                 "total_features": 0,
@@ -276,9 +265,9 @@ class DriftDetector:
             "features": {}
         }
         
-        # Get features to check (exclude sensitive attributes if present)
+        # Get features to check
         features_to_check = [col for col in current_data.columns 
-                           if col not in ['Sex', 'Age_group', 'Sex_original', 'Age_original']]
+                        if col not in ['Sex', 'Age_group', 'Sex_original', 'Age_original']]
         
         results["summary"]["total_features"] = len(features_to_check)
         
@@ -295,51 +284,47 @@ class DriftDetector:
             feature_result = self.detect_feature_drift(
                 current_data, feature, method, feat_threshold
             )
+        
+            # Convert numpy bools to Python bools for JSON serialization
+            if "drift_detected" in feature_result:
+                feature_result["drift_detected"] = bool(feature_result["drift_detected"])
             
             results["features"][feature] = feature_result
             
             if feature_result.get("drift_detected", False):
                 results["summary"]["features_with_drift"] += 1
-        
-        # Calculate drift percentage
-        if results["summary"]["total_features"] > 0:
-            results["summary"]["drift_percentage"] = round(
-                100 * results["summary"]["features_with_drift"] / results["summary"]["total_features"],
-                2
-            )
-        
-        return results
 
+            return results
 
-def quick_drift_check(baseline_df: pd.DataFrame, current_df: pd.DataFrame,
-                     threshold: float = 0.05) -> pd.DataFrame:
-    """
-    Quick drift check across all features, returns summary DataFrame.
-    
-    Args:
-        baseline_df: Reference data
-        current_df: Current data to check
-        threshold: P-value threshold
-    
-    Returns:
-        DataFrame with drift summary for each feature
-    """
-    detector = DriftDetector(baseline_df)
-    results = detector.detect_all_features_drift(current_df, threshold=threshold)
-    
-    # Convert to DataFrame for easy viewing
-    rows = []
-    for feature, result in results["features"].items():
-        if "error" not in result:
-            rows.append({
-                "Feature": feature,
-                "Method": result["method"],
-                "Drift_Detected": result["drift_detected"],
-                "P_Value": result.get("p_value", result.get("kl_divergence", 0)),
-                "Statistic": result.get("ks_statistic", result.get("chi2_statistic", 0))
-            })
-    
-    return pd.DataFrame(rows)
+    def quick_drift_check(baseline_df: pd.DataFrame, current_df: pd.DataFrame,
+                        threshold: float = 0.05) -> pd.DataFrame:
+        """
+        Quick drift check across all features, returns summary DataFrame.
+        
+        Args:
+            baseline_df: Reference data
+            current_df: Current data to check
+            threshold: P-value threshold
+        
+        Returns:
+            DataFrame with drift summary for each feature
+        """
+        detector = DriftDetector(baseline_df)
+        results = detector.detect_all_features_drift(current_df, threshold=threshold)
+        
+        # Convert to DataFrame for easy viewing
+        rows = []
+        for feature, result in results["features"].items():
+            if "error" not in result:
+                rows.append({
+                    "Feature": feature,
+                    "Method": result["method"],
+                    "Drift_Detected": result["drift_detected"],
+                    "P_Value": result.get("p_value", result.get("kl_divergence", 0)),
+                    "Statistic": result.get("ks_statistic", result.get("chi2_statistic", 0))
+                })
+        
+        return pd.DataFrame(rows)
 
 
 if __name__ == "__main__":

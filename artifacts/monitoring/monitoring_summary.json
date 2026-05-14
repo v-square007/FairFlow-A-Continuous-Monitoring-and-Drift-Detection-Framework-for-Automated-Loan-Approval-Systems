@@ -1,0 +1,408 @@
+{
+  "generated_at": "2026-05-13T09:22:44.709517",
+  "monitoring_config": {
+    "num_batches": 6,
+    "batch_size": 150,
+    "drift_threshold": 0.05,
+    "fairness_thresholds": {
+      "demographic_parity_max": 0.1,
+      "disparate_impact_min": 0.8,
+      "equal_opportunity_max": 0.1
+    }
+  },
+  "baseline_performance": {
+    "auc_roc": 0.7799,
+    "accuracy": 0.7733,
+    "bad_precision": 0.6038,
+    "bad_recall": 0.7111,
+    "bad_f1": 0.6531,
+    "good_precision": 0.866,
+    "good_recall": 0.8,
+    "good_f1": 0.8317
+  },
+  "monitoring_summary": {
+    "total_batches_processed": 6,
+    "batches_with_drift": 0,
+    "batches_with_fairness_violations": 6,
+    "batches_with_performance_degradation": 0
+  },
+  "batch_processing_summary": {
+    "total_batches": 6,
+    "total_applications": 900,
+    "total_approved": 582,
+    "total_rejected": 318,
+    "overall_approval_rate": 0.6467,
+    "average_metrics": {
+      "auc_roc": 0.7799,
+      "accuracy": 0.7733,
+      "approval_rate": 0.6467
+    },
+    "std_metrics": {
+      "auc_roc": 0.0,
+      "accuracy": 0.0,
+      "approval_rate": 0.0
+    },
+    "min_metrics": {
+      "auc_roc": 0.7799,
+      "accuracy": 0.7733
+    },
+    "max_metrics": {
+      "auc_roc": 0.7799,
+      "accuracy": 0.7733
+    }
+  },
+  "fairness_summary": {
+    "total_batches": 6,
+    "total_violations": 18,
+    "critical_violations": 18,
+    "warning_violations": 0,
+    "batches_with_violations": 6,
+    "violation_rate": 1.0,
+    "by_attribute": {
+      "Sex": {
+        "total_violations": 0,
+        "critical": 0,
+        "warning": 0,
+        "violation_types": {}
+      },
+      "Age_group": {
+        "total_violations": 18,
+        "critical": 18,
+        "warning": 0,
+        "violation_types": {
+          "demographic_parity_violation": 6,
+          "disparate_impact_violation": 6,
+          "equal_opportunity_violation": 6
+        }
+      }
+    }
+  },
+  "alert_summary": {
+    "total_alerts": 18,
+    "active_alerts": 18,
+    "by_severity": {
+      "critical": 18,
+      "warning": 0,
+      "info": 0
+    },
+    "by_type": {
+      "demographic_parity_violation": 6,
+      "disparate_impact_violation": 6,
+      "equal_opportunity_violation": 6
+    },
+    "recent_alerts": [
+      {
+        "alert_id": "alert_0013",
+        "timestamp": "2026-05-13T09:22:44.698975",
+        "type": "disparate_impact_violation",
+        "severity": "critical",
+        "message": "Disparate impact ratio (0.5861) below threshold (0.8)",
+        "batch_id": "batch_04",
+        "details": {
+          "attribute": "Age_group",
+          "value": 0.5861,
+          "threshold": 0.8
+        },
+        "status": "active"
+      },
+      {
+        "alert_id": "alert_0014",
+        "timestamp": "2026-05-13T09:22:44.698976",
+        "type": "equal_opportunity_violation",
+        "severity": "critical",
+        "message": "Equal opportunity difference (0.3266) exceeds threshold (0.1)",
+        "batch_id": "batch_04",
+        "details": {
+          "attribute": "Age_group",
+          "value": 0.3266,
+          "threshold": 0.1
+        },
+        "status": "active"
+      },
+      {
+        "alert_id": "alert_0015",
+        "timestamp": "2026-05-13T09:22:44.707298",
+        "type": "demographic_parity_violation",
+        "severity": "critical",
+        "message": "Demographic parity difference (0.3363) exceeds threshold (0.1)",
+        "batch_id": "batch_05",
+        "details": {
+          "attribute": "Age_group",
+          "value": 0.3363,
+          "threshold": 0.1
+        },
+        "status": "active"
+      },
+      {
+        "alert_id": "alert_0016",
+        "timestamp": "2026-05-13T09:22:44.707301",
+        "type": "disparate_impact_violation",
+        "severity": "critical",
+        "message": "Disparate impact ratio (0.5861) below threshold (0.8)",
+        "batch_id": "batch_05",
+        "details": {
+          "attribute": "Age_group",
+          "value": 0.5861,
+          "threshold": 0.8
+        },
+        "status": "active"
+      },
+      {
+        "alert_id": "alert_0017",
+        "timestamp": "2026-05-13T09:22:44.707303",
+        "type": "equal_opportunity_violation",
+        "severity": "critical",
+        "message": "Equal opportunity difference (0.3266) exceeds threshold (0.1)",
+        "batch_id": "batch_05",
+        "details": {
+          "attribute": "Age_group",
+          "value": 0.3266,
+          "threshold": 0.1
+        },
+        "status": "active"
+      }
+    ]
+  },
+  "batches": [
+    {
+      "batch_id": "batch_00",
+      "performance": {
+        "auc_roc": 0.7799,
+        "accuracy": 0.7733,
+        "bad_credit": {
+          "precision": 0.6038,
+          "recall": 0.7111,
+          "f1_score": 0.6531,
+          "support": 45
+        },
+        "good_credit": {
+          "precision": 0.866,
+          "recall": 0.8,
+          "f1_score": 0.8317,
+          "support": 105
+        },
+        "macro_avg": {
+          "precision": 0.7349,
+          "recall": 0.7556,
+          "f1_score": 0.7424
+        },
+        "weighted_avg": {
+          "precision": 0.7873,
+          "recall": 0.7733,
+          "f1_score": 0.7781
+        }
+      },
+      "drift_summary": {
+        "total_features": 9,
+        "features_with_drift": 0,
+        "drift_percentage": 0.0
+      },
+      "fairness_summary": {
+        "total_violations": 3,
+        "critical_violations": 3,
+        "warning_violations": 0
+      },
+      "alerts_generated": 3
+    },
+    {
+      "batch_id": "batch_01",
+      "performance": {
+        "auc_roc": 0.7799,
+        "accuracy": 0.7733,
+        "bad_credit": {
+          "precision": 0.6038,
+          "recall": 0.7111,
+          "f1_score": 0.6531,
+          "support": 45
+        },
+        "good_credit": {
+          "precision": 0.866,
+          "recall": 0.8,
+          "f1_score": 0.8317,
+          "support": 105
+        },
+        "macro_avg": {
+          "precision": 0.7349,
+          "recall": 0.7556,
+          "f1_score": 0.7424
+        },
+        "weighted_avg": {
+          "precision": 0.7873,
+          "recall": 0.7733,
+          "f1_score": 0.7781
+        }
+      },
+      "drift_summary": {
+        "total_features": 9,
+        "features_with_drift": 0,
+        "drift_percentage": 0.0
+      },
+      "fairness_summary": {
+        "total_violations": 3,
+        "critical_violations": 3,
+        "warning_violations": 0
+      },
+      "alerts_generated": 3
+    },
+    {
+      "batch_id": "batch_02",
+      "performance": {
+        "auc_roc": 0.7799,
+        "accuracy": 0.7733,
+        "bad_credit": {
+          "precision": 0.6038,
+          "recall": 0.7111,
+          "f1_score": 0.6531,
+          "support": 45
+        },
+        "good_credit": {
+          "precision": 0.866,
+          "recall": 0.8,
+          "f1_score": 0.8317,
+          "support": 105
+        },
+        "macro_avg": {
+          "precision": 0.7349,
+          "recall": 0.7556,
+          "f1_score": 0.7424
+        },
+        "weighted_avg": {
+          "precision": 0.7873,
+          "recall": 0.7733,
+          "f1_score": 0.7781
+        }
+      },
+      "drift_summary": {
+        "total_features": 9,
+        "features_with_drift": 0,
+        "drift_percentage": 0.0
+      },
+      "fairness_summary": {
+        "total_violations": 3,
+        "critical_violations": 3,
+        "warning_violations": 0
+      },
+      "alerts_generated": 3
+    },
+    {
+      "batch_id": "batch_03",
+      "performance": {
+        "auc_roc": 0.7799,
+        "accuracy": 0.7733,
+        "bad_credit": {
+          "precision": 0.6038,
+          "recall": 0.7111,
+          "f1_score": 0.6531,
+          "support": 45
+        },
+        "good_credit": {
+          "precision": 0.866,
+          "recall": 0.8,
+          "f1_score": 0.8317,
+          "support": 105
+        },
+        "macro_avg": {
+          "precision": 0.7349,
+          "recall": 0.7556,
+          "f1_score": 0.7424
+        },
+        "weighted_avg": {
+          "precision": 0.7873,
+          "recall": 0.7733,
+          "f1_score": 0.7781
+        }
+      },
+      "drift_summary": {
+        "total_features": 9,
+        "features_with_drift": 0,
+        "drift_percentage": 0.0
+      },
+      "fairness_summary": {
+        "total_violations": 3,
+        "critical_violations": 3,
+        "warning_violations": 0
+      },
+      "alerts_generated": 3
+    },
+    {
+      "batch_id": "batch_04",
+      "performance": {
+        "auc_roc": 0.7799,
+        "accuracy": 0.7733,
+        "bad_credit": {
+          "precision": 0.6038,
+          "recall": 0.7111,
+          "f1_score": 0.6531,
+          "support": 45
+        },
+        "good_credit": {
+          "precision": 0.866,
+          "recall": 0.8,
+          "f1_score": 0.8317,
+          "support": 105
+        },
+        "macro_avg": {
+          "precision": 0.7349,
+          "recall": 0.7556,
+          "f1_score": 0.7424
+        },
+        "weighted_avg": {
+          "precision": 0.7873,
+          "recall": 0.7733,
+          "f1_score": 0.7781
+        }
+      },
+      "drift_summary": {
+        "total_features": 9,
+        "features_with_drift": 0,
+        "drift_percentage": 0.0
+      },
+      "fairness_summary": {
+        "total_violations": 3,
+        "critical_violations": 3,
+        "warning_violations": 0
+      },
+      "alerts_generated": 3
+    },
+    {
+      "batch_id": "batch_05",
+      "performance": {
+        "auc_roc": 0.7799,
+        "accuracy": 0.7733,
+        "bad_credit": {
+          "precision": 0.6038,
+          "recall": 0.7111,
+          "f1_score": 0.6531,
+          "support": 45
+        },
+        "good_credit": {
+          "precision": 0.866,
+          "recall": 0.8,
+          "f1_score": 0.8317,
+          "support": 105
+        },
+        "macro_avg": {
+          "precision": 0.7349,
+          "recall": 0.7556,
+          "f1_score": 0.7424
+        },
+        "weighted_avg": {
+          "precision": 0.7873,
+          "recall": 0.7733,
+          "f1_score": 0.7781
+        }
+      },
+      "drift_summary": {
+        "total_features": 9,
+        "features_with_drift": 0,
+        "drift_percentage": 0.0
+      },
+      "fairness_summary": {
+        "total_violations": 3,
+        "critical_violations": 3,
+        "warning_violations": 0
+      },
+      "alerts_generated": 3
+    }
+  ]
+}
