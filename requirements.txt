@@ -1,6 +1,10 @@
-numpy
+dash
+dash-bootstrap-components
 pandas
+numpy
+plotly
 scikit-learn
-scipy
 xgboost
-fastparquet
+scipy
+python-dateutil
+gunicorn
