@@ -20,7 +20,7 @@
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6466666666666666,
+        "approval_rate": 0.6467,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
@@ -66,13 +66,13 @@
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6466666666666666,
+        "approval_rate": 0.6517,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
-        "auc_roc": 0.7799,
-        "accuracy": 0.7733,
+        "auc_roc": 0.7819,
+        "accuracy": 0.7763,
         "bad_credit": {
           "precision": 0.6038,
           "recall": 0.7111,
@@ -112,13 +112,13 @@
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6466666666666666,
+        "approval_rate": 0.6497,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
         "auc_roc": 0.7799,
-        "accuracy": 0.7733,
+        "accuracy": 0.7743,
         "bad_credit": {
           "precision": 0.6038,
           "recall": 0.7111,
@@ -158,13 +158,13 @@
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6466666666666666,
+        "approval_rate": 0.6387,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
-        "auc_roc": 0.7799,
-        "accuracy": 0.7733,
+        "auc_roc": 0.7649,
+        "accuracy": 0.7613,
         "bad_credit": {
           "precision": 0.6038,
           "recall": 0.7111,
@@ -204,13 +204,13 @@
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6466666666666666,
+        "approval_rate": 0.6417,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
-        "auc_roc": 0.7799,
-        "accuracy": 0.7733,
+        "auc_roc": 0.7699,
+        "accuracy": 0.7653,
         "bad_credit": {
           "precision": 0.6038,
           "recall": 0.7111,
@@ -250,13 +250,13 @@
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6466666666666666,
+        "approval_rate": 0.6487,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
-        "auc_roc": 0.7799,
-        "accuracy": 0.7733,
+        "auc_roc": 0.7849,
+        "accuracy": 0.7773,
         "bad_credit": {
           "precision": 0.6038,
           "recall": 0.7111,
