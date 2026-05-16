@@ -1,24 +1,24 @@
 {
   "summary": {
     "total_features": 9,
-    "features_with_drift": 0,
-    "drift_percentage": 0.0
+    "features_with_drift": 2,
+    "drift_percentage": 0.2222222222222222
   },
   "features": {
     "Age": {
       "feature": "Age",
       "method": "ks_test",
-      "drift_detected": false,
-      "p_value": 1.0,
-      "ks_statistic": 0.0,
+      "drift_detected": true,
+      "p_value": 0.029722377352396485,
+      "ks_statistic": 0.23533989748458226,
       "threshold": 0.05,
       "baseline_mean": 0.0876,
       "current_mean": 0.0876,
-      "mean_shift": 0.0,
+      "mean_shift": 0.32843591354096907,
       "baseline_std": 1.0178,
       "current_std": 1.0178,
-      "std_shift": 0.0,
-      "interpretation": "No significant drift"
+      "std_shift": 0.11304082489441243,
+      "interpretation": "Significant drift detected"
     }
   },
   "prediction_drift": {

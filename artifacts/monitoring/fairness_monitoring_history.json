@@ -111,9 +111,9 @@
             "36-45": 0.6538461538461539,
             "18-25": 0.6363636363636364
           },
-          "demographic_parity_difference": 0.3363,
-          "disparate_impact_ratio": 0.5861,
-          "equal_opportunity_difference": 0.3266
+          "demographic_parity_difference": 0.3332,
+          "disparate_impact_ratio": 0.5579,
+          "equal_opportunity_difference": 0.3182
         }
       },
       "violations": [
@@ -217,9 +217,9 @@
             "36-45": 0.6538461538461539,
             "18-25": 0.6363636363636364
           },
-          "demographic_parity_difference": 0.3363,
-          "disparate_impact_ratio": 0.5861,
-          "equal_opportunity_difference": 0.3266
+          "demographic_parity_difference": 0.3365,
+          "disparate_impact_ratio": 0.5577,
+          "equal_opportunity_difference": 0.3176
         }
       },
       "violations": [
@@ -323,9 +323,9 @@
             "36-45": 0.6538461538461539,
             "18-25": 0.6363636363636364
           },
-          "demographic_parity_difference": 0.3363,
-          "disparate_impact_ratio": 0.5861,
-          "equal_opportunity_difference": 0.3266
+          "demographic_parity_difference": 0.3423,
+          "disparate_impact_ratio": 0.5888,
+          "equal_opportunity_difference": 0.3182
         }
       },
       "violations": [
@@ -429,9 +429,9 @@
             "36-45": 0.6538461538461539,
             "18-25": 0.6363636363636364
           },
-          "demographic_parity_difference": 0.3363,
-          "disparate_impact_ratio": 0.5861,
-          "equal_opportunity_difference": 0.3266
+          "demographic_parity_difference": 0.3399,
+          "disparate_impact_ratio": 0.6047,
+          "equal_opportunity_difference": 0.3118
         }
       },
       "violations": [
@@ -535,9 +535,9 @@
             "36-45": 0.6538461538461539,
             "18-25": 0.6363636363636364
           },
-          "demographic_parity_difference": 0.3363,
-          "disparate_impact_ratio": 0.5861,
-          "equal_opportunity_difference": 0.3266
+          "demographic_parity_difference": 0.3485,
+          "disparate_impact_ratio": 0.598,
+          "equal_opportunity_difference": 0.3218
         }
       },
       "violations": [
@@ -641,9 +641,9 @@
             "36-45": 0.6538461538461539,
             "18-25": 0.6363636363636364
           },
-          "demographic_parity_difference": 0.3363,
-          "disparate_impact_ratio": 0.5861,
-          "equal_opportunity_difference": 0.3266
+          "demographic_parity_difference": 0.3225,
+          "disparate_impact_ratio": 0.6135,
+          "equal_opportunity_difference": 0.3217
         }
       },
       "violations": [

@@ -22,9 +22,9 @@
   },
   "monitoring_summary": {
     "total_batches_processed": 6,
-    "batches_with_drift": 0,
+    "batches_with_drift": 2,
     "batches_with_fairness_violations": 6,
-    "batches_with_performance_degradation": 0
+    "batches_with_performance_degradation": 2
   },
   "batch_processing_summary": {
     "total_batches": 6,
@@ -33,21 +33,21 @@
     "total_rejected": 318,
     "overall_approval_rate": 0.6467,
     "average_metrics": {
-      "auc_roc": 0.7799,
+      "auc_roc": 0.7769,
       "accuracy": 0.7733,
       "approval_rate": 0.6467
     },
     "std_metrics": {
-      "auc_roc": 0.0,
+      "auc_roc": 0.0089,
       "accuracy": 0.0,
       "approval_rate": 0.0
     },
     "min_metrics": {
-      "auc_roc": 0.7799,
+      "auc_roc": 0.7649,
       "accuracy": 0.7733
     },
     "max_metrics": {
-      "auc_roc": 0.7799,
+      "auc_roc": 0.7849,
       "accuracy": 0.7733
     }
   },
@@ -314,8 +314,8 @@
       },
       "drift_summary": {
         "total_features": 9,
-        "features_with_drift": 0,
-        "drift_percentage": 0.0
+        "features_with_drift": 3,
+        "drift_percentage": 0.3333333333333333
       },
       "fairness_summary": {
         "total_violations": 3,
@@ -394,8 +394,8 @@
       },
       "drift_summary": {
         "total_features": 9,
-        "features_with_drift": 0,
-        "drift_percentage": 0.0
+        "features_with_drift": 2,
+        "drift_percentage": 0.2222222222222222
       },
       "fairness_summary": {
         "total_violations": 3,
