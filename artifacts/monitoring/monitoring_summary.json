@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T07:07:26.074599",
+  "generated_at": "2026-05-16T12:44:32.554445",
   "monitoring_config": {
     "num_batches": 6,
     "batch_size": 150,
@@ -22,9 +22,9 @@
   },
   "monitoring_summary": {
     "total_batches_processed": 6,
-    "batches_with_drift": 2,
+    "batches_with_drift": 0,
     "batches_with_fairness_violations": 6,
-    "batches_with_performance_degradation": 2
+    "batches_with_performance_degradation": 0
   },
   "batch_processing_summary": {
     "total_batches": 6,
@@ -33,21 +33,21 @@
     "total_rejected": 318,
     "overall_approval_rate": 0.6467,
     "average_metrics": {
-      "auc_roc": 0.7769,
+      "auc_roc": 0.7799,
       "accuracy": 0.7733,
       "approval_rate": 0.6467
     },
     "std_metrics": {
-      "auc_roc": 0.0089,
+      "auc_roc": 0.0,
       "accuracy": 0.0,
       "approval_rate": 0.0
     },
     "min_metrics": {
-      "auc_roc": 0.7649,
+      "auc_roc": 0.7799,
       "accuracy": 0.7733
     },
     "max_metrics": {
-      "auc_roc": 0.7849,
+      "auc_roc": 0.7799,
       "accuracy": 0.7733
     }
   },
@@ -93,7 +93,7 @@
     "recent_alerts": [
       {
         "alert_id": "alert_0013",
-        "timestamp": "2026-05-16T07:07:26.062101",
+        "timestamp": "2026-05-16T12:44:32.543952",
         "type": "disparate_impact_violation",
         "severity": "critical",
         "message": "Disparate impact ratio (0.5861) below threshold (0.8)",
@@ -107,7 +107,7 @@
       },
       {
         "alert_id": "alert_0014",
-        "timestamp": "2026-05-16T07:07:26.062103",
+        "timestamp": "2026-05-16T12:44:32.543953",
         "type": "equal_opportunity_violation",
         "severity": "critical",
         "message": "Equal opportunity difference (0.3266) exceeds threshold (0.1)",
@@ -121,7 +121,7 @@
       },
       {
         "alert_id": "alert_0015",
-        "timestamp": "2026-05-16T07:07:26.070870",
+        "timestamp": "2026-05-16T12:44:32.552391",
         "type": "demographic_parity_violation",
         "severity": "critical",
         "message": "Demographic parity difference (0.3363) exceeds threshold (0.1)",
@@ -135,7 +135,7 @@
       },
       {
         "alert_id": "alert_0016",
-        "timestamp": "2026-05-16T07:07:26.070873",
+        "timestamp": "2026-05-16T12:44:32.552393",
         "type": "disparate_impact_violation",
         "severity": "critical",
         "message": "Disparate impact ratio (0.5861) below threshold (0.8)",
@@ -149,7 +149,7 @@
       },
       {
         "alert_id": "alert_0017",
-        "timestamp": "2026-05-16T07:07:26.070875",
+        "timestamp": "2026-05-16T12:44:32.552395",
         "type": "equal_opportunity_violation",
         "severity": "critical",
         "message": "Equal opportunity difference (0.3266) exceeds threshold (0.1)",
@@ -314,8 +314,8 @@
       },
       "drift_summary": {
         "total_features": 9,
-        "features_with_drift": 3,
-        "drift_percentage": 0.3333333333333333
+        "features_with_drift": 0,
+        "drift_percentage": 0.0
       },
       "fairness_summary": {
         "total_violations": 3,
@@ -394,8 +394,8 @@
       },
       "drift_summary": {
         "total_features": 9,
-        "features_with_drift": 2,
-        "drift_percentage": 0.2222222222222222
+        "features_with_drift": 0,
+        "drift_percentage": 0.0
       },
       "fairness_summary": {
         "total_violations": 3,

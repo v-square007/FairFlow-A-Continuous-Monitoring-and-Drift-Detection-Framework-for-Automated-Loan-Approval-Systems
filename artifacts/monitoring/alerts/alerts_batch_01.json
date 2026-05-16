@@ -1,11 +1,11 @@
 {
   "batch_id": "batch_01",
-  "timestamp": "2026-05-16T07:07:26.035573",
+  "timestamp": "2026-05-16T12:44:32.519192",
   "alert_count": 3,
   "alerts": [
     {
       "alert_id": "alert_0003",
-      "timestamp": "2026-05-16T07:07:26.035558",
+      "timestamp": "2026-05-16T12:44:32.519177",
       "type": "demographic_parity_violation",
       "severity": "critical",
       "message": "Demographic parity difference (0.3363) exceeds threshold (0.1)",
@@ -19,7 +19,7 @@
     },
     {
       "alert_id": "alert_0004",
-      "timestamp": "2026-05-16T07:07:26.035561",
+      "timestamp": "2026-05-16T12:44:32.519180",
       "type": "disparate_impact_violation",
       "severity": "critical",
       "message": "Disparate impact ratio (0.5861) below threshold (0.8)",
@@ -33,7 +33,7 @@
     },
     {
       "alert_id": "alert_0005",
-      "timestamp": "2026-05-16T07:07:26.035563",
+      "timestamp": "2026-05-16T12:44:32.519181",
       "type": "equal_opportunity_violation",
       "severity": "critical",
       "message": "Equal opportunity difference (0.3266) exceeds threshold (0.1)",

@@ -1,11 +1,11 @@
 {
   "batch_id": "batch_03",
-  "timestamp": "2026-05-16T07:07:26.052990",
+  "timestamp": "2026-05-16T12:44:32.532963",
   "sample_size": 150,
   "fairness_metrics": {
     "Sex": {
       "attribute": "Sex",
-      "timestamp": "2026-05-16T07:07:26.052996",
+      "timestamp": "2026-05-16T12:44:32.532969",
       "groups": {
         "male": {
           "size": 107,
@@ -32,7 +32,7 @@
     },
     "Age_group": {
       "attribute": "Age_group",
-      "timestamp": "2026-05-16T07:07:26.053181",
+      "timestamp": "2026-05-16T12:44:32.533156",
       "groups": {
         "26-35": {
           "size": 66,

@@ -13,14 +13,14 @@
   "batches": [
     {
       "batch_id": "batch_00",
-      "timestamp": "2026-05-16T07:07:26.017947",
+      "timestamp": "2026-05-16T12:44:32.506202",
       "batch_size": 150,
       "threshold": 0.25,
       "predictions": {
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6467,
+        "approval_rate": 0.6466666666666666,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
@@ -59,20 +59,20 @@
     },
     {
       "batch_id": "batch_01",
-      "timestamp": "2026-05-16T07:07:26.031787",
+      "timestamp": "2026-05-16T12:44:32.516075",
       "batch_size": 150,
       "threshold": 0.25,
       "predictions": {
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6517,
+        "approval_rate": 0.6466666666666666,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
-        "auc_roc": 0.7819,
-        "accuracy": 0.7763,
+        "auc_roc": 0.7799,
+        "accuracy": 0.7733,
         "bad_credit": {
           "precision": 0.6038,
           "recall": 0.7111,
@@ -105,20 +105,20 @@
     },
     {
       "batch_id": "batch_02",
-      "timestamp": "2026-05-16T07:07:26.040621",
+      "timestamp": "2026-05-16T12:44:32.523393",
       "batch_size": 150,
       "threshold": 0.25,
       "predictions": {
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6497,
+        "approval_rate": 0.6466666666666666,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
         "auc_roc": 0.7799,
-        "accuracy": 0.7743,
+        "accuracy": 0.7733,
         "bad_credit": {
           "precision": 0.6038,
           "recall": 0.7111,
@@ -151,20 +151,20 @@
     },
     {
       "batch_id": "batch_03",
-      "timestamp": "2026-05-16T07:07:26.050795",
+      "timestamp": "2026-05-16T12:44:32.530685",
       "batch_size": 150,
       "threshold": 0.25,
       "predictions": {
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6387,
+        "approval_rate": 0.6466666666666666,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
-        "auc_roc": 0.7649,
-        "accuracy": 0.7613,
+        "auc_roc": 0.7799,
+        "accuracy": 0.7733,
         "bad_credit": {
           "precision": 0.6038,
           "recall": 0.7111,
@@ -197,20 +197,20 @@
     },
     {
       "batch_id": "batch_04",
-      "timestamp": "2026-05-16T07:07:26.058309",
+      "timestamp": "2026-05-16T12:44:32.538645",
       "batch_size": 150,
       "threshold": 0.25,
       "predictions": {
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6417,
+        "approval_rate": 0.6466666666666666,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
-        "auc_roc": 0.7699,
-        "accuracy": 0.7653,
+        "auc_roc": 0.7799,
+        "accuracy": 0.7733,
         "bad_credit": {
           "precision": 0.6038,
           "recall": 0.7111,
@@ -243,20 +243,20 @@
     },
     {
       "batch_id": "batch_05",
-      "timestamp": "2026-05-16T07:07:26.066268",
+      "timestamp": "2026-05-16T12:44:32.549233",
       "batch_size": 150,
       "threshold": 0.25,
       "predictions": {
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6487,
+        "approval_rate": 0.6466666666666666,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
-        "auc_roc": 0.7849,
-        "accuracy": 0.7773,
+        "auc_roc": 0.7799,
+        "accuracy": 0.7733,
         "bad_credit": {
           "precision": 0.6038,
           "recall": 0.7111,
