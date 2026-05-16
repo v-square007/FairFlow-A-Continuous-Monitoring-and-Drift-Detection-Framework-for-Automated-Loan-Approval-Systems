@@ -44,12 +44,12 @@
   "history": [
     {
       "batch_id": "batch_00",
-      "timestamp": "2026-05-13T09:22:44.667463",
+      "timestamp": "2026-05-16T07:07:26.023151",
       "sample_size": 150,
       "fairness_metrics": {
         "Sex": {
           "attribute": "Sex",
-          "timestamp": "2026-05-13T09:22:44.667473",
+          "timestamp": "2026-05-16T07:07:26.023161",
           "groups": {
             "male": {
               "size": 107,
@@ -76,7 +76,7 @@
         },
         "Age_group": {
           "attribute": "Age_group",
-          "timestamp": "2026-05-13T09:22:44.667847",
+          "timestamp": "2026-05-16T07:07:26.024021",
           "groups": {
             "26-35": {
               "size": 66,
@@ -150,12 +150,12 @@
     },
     {
       "batch_id": "batch_01",
-      "timestamp": "2026-05-13T09:22:44.676035",
+      "timestamp": "2026-05-16T07:07:26.034760",
       "sample_size": 150,
       "fairness_metrics": {
         "Sex": {
           "attribute": "Sex",
-          "timestamp": "2026-05-13T09:22:44.676041",
+          "timestamp": "2026-05-16T07:07:26.034766",
           "groups": {
             "male": {
               "size": 107,
@@ -182,7 +182,7 @@
         },
         "Age_group": {
           "attribute": "Age_group",
-          "timestamp": "2026-05-13T09:22:44.676238",
+          "timestamp": "2026-05-16T07:07:26.034972",
           "groups": {
             "26-35": {
               "size": 66,
@@ -256,12 +256,12 @@
     },
     {
       "batch_id": "batch_02",
-      "timestamp": "2026-05-13T09:22:44.683567",
+      "timestamp": "2026-05-16T07:07:26.045195",
       "sample_size": 150,
       "fairness_metrics": {
         "Sex": {
           "attribute": "Sex",
-          "timestamp": "2026-05-13T09:22:44.683572",
+          "timestamp": "2026-05-16T07:07:26.045201",
           "groups": {
             "male": {
               "size": 107,
@@ -288,7 +288,7 @@
         },
         "Age_group": {
           "attribute": "Age_group",
-          "timestamp": "2026-05-13T09:22:44.683753",
+          "timestamp": "2026-05-16T07:07:26.045405",
           "groups": {
             "26-35": {
               "size": 66,
@@ -362,12 +362,12 @@
     },
     {
       "batch_id": "batch_03",
-      "timestamp": "2026-05-13T09:22:44.690884",
+      "timestamp": "2026-05-16T07:07:26.052990",
       "sample_size": 150,
       "fairness_metrics": {
         "Sex": {
           "attribute": "Sex",
-          "timestamp": "2026-05-13T09:22:44.690891",
+          "timestamp": "2026-05-16T07:07:26.052996",
           "groups": {
             "male": {
               "size": 107,
@@ -394,7 +394,7 @@
         },
         "Age_group": {
           "attribute": "Age_group",
-          "timestamp": "2026-05-13T09:22:44.691107",
+          "timestamp": "2026-05-16T07:07:26.053181",
           "groups": {
             "26-35": {
               "size": 66,
@@ -468,12 +468,12 @@
     },
     {
       "batch_id": "batch_04",
-      "timestamp": "2026-05-13T09:22:44.698206",
+      "timestamp": "2026-05-16T07:07:26.061203",
       "sample_size": 150,
       "fairness_metrics": {
         "Sex": {
           "attribute": "Sex",
-          "timestamp": "2026-05-13T09:22:44.698212",
+          "timestamp": "2026-05-16T07:07:26.061215",
           "groups": {
             "male": {
               "size": 107,
@@ -500,7 +500,7 @@
         },
         "Age_group": {
           "attribute": "Age_group",
-          "timestamp": "2026-05-13T09:22:44.698408",
+          "timestamp": "2026-05-16T07:07:26.061443",
           "groups": {
             "26-35": {
               "size": 66,
@@ -574,12 +574,12 @@
     },
     {
       "batch_id": "batch_05",
-      "timestamp": "2026-05-13T09:22:44.705901",
+      "timestamp": "2026-05-16T07:07:26.070053",
       "sample_size": 150,
       "fairness_metrics": {
         "Sex": {
           "attribute": "Sex",
-          "timestamp": "2026-05-13T09:22:44.705929",
+          "timestamp": "2026-05-16T07:07:26.070059",
           "groups": {
             "male": {
               "size": 107,
@@ -606,7 +606,7 @@
         },
         "Age_group": {
           "attribute": "Age_group",
-          "timestamp": "2026-05-13T09:22:44.706603",
+          "timestamp": "2026-05-16T07:07:26.070305",
           "groups": {
             "26-35": {
               "size": 66,

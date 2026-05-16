@@ -369,7 +369,7 @@ def main():
     
     all_pass = True
     for name, path, exists in deliverables:
-        status = "✅ PASS" if exists else "❌ FAIL"
+        status = " PASS" if exists else " FAIL"
         print(f"   {status} {name}")
         if not exists:
             all_pass = False
@@ -378,7 +378,7 @@ def main():
     print("="*80)
     
     if all_pass:
-        print("✅ SUCCESS: Part 2 monitoring complete!")
+        print("[INFO] SUCCESS: Part 2 monitoring complete!")
         print()
         print("All monitoring artifacts generated:")
         print(f"  → {BATCH_LOGS_DIR}")
