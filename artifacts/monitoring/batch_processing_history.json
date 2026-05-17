@@ -20,7 +20,7 @@
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6466666666666666,
+        "approval_rate": 0.6467,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
@@ -48,6 +48,12 @@
           "precision": 0.7873,
           "recall": 0.7733,
           "f1_score": 0.7781
+        },
+        "confusion_matrix": {
+          "true_negative": 32,
+          "false_positive": 13,
+          "false_negative": 21,
+          "true_positive": 84
         }
       },
       "confusion_matrix": {
@@ -66,34 +72,40 @@
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6466666666666666,
+        "approval_rate": 0.6517,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
-        "auc_roc": 0.7799,
-        "accuracy": 0.7733,
+        "auc_roc": 0.7819,
+        "accuracy": 0.7763,
         "bad_credit": {
-          "precision": 0.6038,
-          "recall": 0.7111,
-          "f1_score": 0.6531,
+          "precision": 0.6226,
+          "recall": 0.7333,
+          "f1_score": 0.6735,
           "support": 45
         },
         "good_credit": {
-          "precision": 0.866,
-          "recall": 0.8,
-          "f1_score": 0.8317,
+          "precision": 0.8763,
+          "recall": 0.8095,
+          "f1_score": 0.8416,
           "support": 105
         },
         "macro_avg": {
-          "precision": 0.7349,
-          "recall": 0.7556,
-          "f1_score": 0.7424
+          "precision": 0.7495,
+          "recall": 0.7714,
+          "f1_score": 0.7575
         },
         "weighted_avg": {
-          "precision": 0.7873,
-          "recall": 0.7733,
-          "f1_score": 0.7781
+          "precision": 0.8002,
+          "recall": 0.7867,
+          "f1_score": 0.7911
+        },
+        "confusion_matrix": {
+          "true_negative": 33,
+          "false_positive": 12,
+          "false_negative": 20,
+          "true_positive": 85
         }
       },
       "confusion_matrix": {
@@ -112,34 +124,40 @@
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6466666666666666,
+        "approval_rate": 0.6497,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
         "auc_roc": 0.7799,
-        "accuracy": 0.7733,
+        "accuracy": 0.7743,
         "bad_credit": {
-          "precision": 0.6038,
+          "precision": 0.6154,
           "recall": 0.7111,
-          "f1_score": 0.6531,
+          "f1_score": 0.6598,
           "support": 45
         },
         "good_credit": {
-          "precision": 0.866,
-          "recall": 0.8,
-          "f1_score": 0.8317,
+          "precision": 0.8673,
+          "recall": 0.8095,
+          "f1_score": 0.8374,
           "support": 105
         },
         "macro_avg": {
-          "precision": 0.7349,
-          "recall": 0.7556,
-          "f1_score": 0.7424
+          "precision": 0.7414,
+          "recall": 0.7603,
+          "f1_score": 0.7486
         },
         "weighted_avg": {
-          "precision": 0.7873,
-          "recall": 0.7733,
-          "f1_score": 0.7781
+          "precision": 0.7918,
+          "recall": 0.78,
+          "f1_score": 0.7841
+        },
+        "confusion_matrix": {
+          "true_negative": 32,
+          "false_positive": 13,
+          "false_negative": 20,
+          "true_positive": 85
         }
       },
       "confusion_matrix": {
@@ -158,34 +176,40 @@
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6466666666666666,
+        "approval_rate": 0.6387,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
-        "auc_roc": 0.7799,
-        "accuracy": 0.7733,
+        "auc_roc": 0.7649,
+        "accuracy": 0.7613,
         "bad_credit": {
-          "precision": 0.6038,
-          "recall": 0.7111,
-          "f1_score": 0.6531,
+          "precision": 0.566,
+          "recall": 0.6667,
+          "f1_score": 0.6122,
           "support": 45
         },
         "good_credit": {
-          "precision": 0.866,
-          "recall": 0.8,
-          "f1_score": 0.8317,
+          "precision": 0.8454,
+          "recall": 0.781,
+          "f1_score": 0.8119,
           "support": 105
         },
         "macro_avg": {
-          "precision": 0.7349,
-          "recall": 0.7556,
-          "f1_score": 0.7424
+          "precision": 0.7057,
+          "recall": 0.7238,
+          "f1_score": 0.7121
         },
         "weighted_avg": {
-          "precision": 0.7873,
-          "recall": 0.7733,
-          "f1_score": 0.7781
+          "precision": 0.7616,
+          "recall": 0.7467,
+          "f1_score": 0.752
+        },
+        "confusion_matrix": {
+          "true_negative": 30,
+          "false_positive": 15,
+          "false_negative": 23,
+          "true_positive": 82
         }
       },
       "confusion_matrix": {
@@ -204,34 +228,40 @@
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6466666666666666,
+        "approval_rate": 0.6417,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
-        "auc_roc": 0.7799,
-        "accuracy": 0.7733,
+        "auc_roc": 0.7699,
+        "accuracy": 0.7653,
         "bad_credit": {
-          "precision": 0.6038,
-          "recall": 0.7111,
-          "f1_score": 0.6531,
+          "precision": 0.5849,
+          "recall": 0.6889,
+          "f1_score": 0.6327,
           "support": 45
         },
         "good_credit": {
-          "precision": 0.866,
-          "recall": 0.8,
-          "f1_score": 0.8317,
+          "precision": 0.8557,
+          "recall": 0.7905,
+          "f1_score": 0.8218,
           "support": 105
         },
         "macro_avg": {
-          "precision": 0.7349,
-          "recall": 0.7556,
-          "f1_score": 0.7424
+          "precision": 0.7203,
+          "recall": 0.7397,
+          "f1_score": 0.7272
         },
         "weighted_avg": {
-          "precision": 0.7873,
-          "recall": 0.7733,
-          "f1_score": 0.7781
+          "precision": 0.7744,
+          "recall": 0.76,
+          "f1_score": 0.765
+        },
+        "confusion_matrix": {
+          "true_negative": 31,
+          "false_positive": 14,
+          "false_negative": 22,
+          "true_positive": 83
         }
       },
       "confusion_matrix": {
@@ -250,34 +280,40 @@
         "total_applications": 150,
         "approved": 97,
         "rejected": 53,
-        "approval_rate": 0.6466666666666666,
+        "approval_rate": 0.6487,
         "mean_probability": 0.4278064966201782,
         "std_probability": 0.26554742455482483
       },
       "performance": {
-        "auc_roc": 0.7799,
-        "accuracy": 0.7733,
+        "auc_roc": 0.7849,
+        "accuracy": 0.7773,
         "bad_credit": {
-          "precision": 0.6038,
-          "recall": 0.7111,
-          "f1_score": 0.6531,
+          "precision": 0.6111,
+          "recall": 0.7333,
+          "f1_score": 0.6667,
           "support": 45
         },
         "good_credit": {
-          "precision": 0.866,
+          "precision": 0.875,
           "recall": 0.8,
-          "f1_score": 0.8317,
+          "f1_score": 0.8358,
           "support": 105
         },
         "macro_avg": {
-          "precision": 0.7349,
-          "recall": 0.7556,
-          "f1_score": 0.7424
+          "precision": 0.7431,
+          "recall": 0.7667,
+          "f1_score": 0.7512
         },
         "weighted_avg": {
-          "precision": 0.7873,
-          "recall": 0.7733,
-          "f1_score": 0.7781
+          "precision": 0.7958,
+          "recall": 0.78,
+          "f1_score": 0.7851
+        },
+        "confusion_matrix": {
+          "true_negative": 33,
+          "false_positive": 12,
+          "false_negative": 21,
+          "true_positive": 84
         }
       },
       "confusion_matrix": {

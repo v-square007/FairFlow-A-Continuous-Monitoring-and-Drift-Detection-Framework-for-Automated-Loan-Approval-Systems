@@ -384,6 +384,230 @@ def create_drift_status_donut(drift_reports):
     
     return fig
 
+def create_confusion_matrix_heatmap(batch_data, batch_id='batch_00'):
+    """Create confusion matrix heatmap for selected batch"""
+    # Find the selected batch
+    selected_batch = None
+    for batch in batch_data['batches']:
+        if batch['batch_id'] == batch_id:
+            selected_batch = batch
+            break
+    
+    if not selected_batch or 'confusion_matrix' not in selected_batch['performance']:
+        return go.Figure()
+    
+    cm = selected_batch['performance']['confusion_matrix']
+    
+    # Create confusion matrix array
+    z = [
+        [cm['true_negative'], cm['false_positive']],
+        [cm['false_negative'], cm['true_positive']]
+    ]
+    
+    # Create annotations for the heatmap
+    annotations = []
+    for i in range(2):
+        for j in range(2):
+            annotations.append(
+                dict(
+                    x=j, y=i,
+                    text=str(z[i][j]),
+                    font=dict(color=TEXT_MAIN, size=24, weight='bold'),
+                    showarrow=False
+                )
+            )
+    
+    fig = go.Figure(data=go.Heatmap(
+        z=z,
+        x=['Predicted: Bad Credit', 'Predicted: Good Credit'],
+        y=['Actual: Bad Credit', 'Actual: Good Credit'],
+        colorscale=[
+            [0, '#1a1f2e'],
+            [0.5, ACCENT_PURPLE],
+            [1, ACCENT_CYAN]
+        ],
+        showscale=False,
+        hovertemplate='%{y}<br>%{x}<br>Count: %{z}<extra></extra>'
+    ))
+    
+    fig.update_layout(
+        annotations=annotations,
+        margin=dict(l=20, r=20, t=10, b=20),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(color=TEXT_MUTED, size=11),
+        xaxis=dict(side='bottom', tickfont=dict(size=10)),
+        yaxis=dict(tickfont=dict(size=10))
+    )
+    
+    return fig
+
+def create_classification_report_chart(batch_data, batch_id='batch_00'):
+    """Create classification report visualization"""
+    # Find the selected batch
+    selected_batch = None
+    for batch in batch_data['batches']:
+        if batch['batch_id'] == batch_id:
+            selected_batch = batch
+            break
+    
+    if not selected_batch:
+        return go.Figure()
+    
+    perf = selected_batch['performance']
+    
+    # Prepare data for grouped bar chart
+    classes = ['Bad Credit', 'Good Credit', 'Macro Avg', 'Weighted Avg']
+    precision = [
+        perf['bad_credit']['precision'],
+        perf['good_credit']['precision'],
+        perf['macro_avg']['precision'],
+        perf['weighted_avg']['precision']
+    ]
+    recall = [
+        perf['bad_credit']['recall'],
+        perf['good_credit']['recall'],
+        perf['macro_avg']['recall'],
+        perf['weighted_avg']['recall']
+    ]
+    f1_score = [
+        perf['bad_credit']['f1_score'],
+        perf['good_credit']['f1_score'],
+        perf['macro_avg']['f1_score'],
+        perf['weighted_avg']['f1_score']
+    ]
+    
+    fig = go.Figure()
+    
+    fig.add_trace(go.Bar(
+        name='Precision',
+        x=classes,
+        y=precision,
+        marker=dict(color=ACCENT_CYAN),
+        text=[f"{v:.3f}" for v in precision],
+        textposition='auto'
+    ))
+    
+    fig.add_trace(go.Bar(
+        name='Recall',
+        x=classes,
+        y=recall,
+        marker=dict(color=ACCENT_PURPLE),
+        text=[f"{v:.3f}" for v in recall],
+        textposition='auto'
+    ))
+    
+    fig.add_trace(go.Bar(
+        name='F1-Score',
+        x=classes,
+        y=f1_score,
+        marker=dict(color=ACCENT_GREEN),
+        text=[f"{v:.3f}" for v in f1_score],
+        textposition='auto'
+    ))
+    
+    fig.update_layout(
+        barmode='group',
+        margin=dict(l=20, r=20, t=10, b=20),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(color=TEXT_MUTED, size=11),
+        xaxis=dict(showgrid=False, tickangle=-15),
+        yaxis=dict(showgrid=True, gridcolor="#222938", range=[0, 1], title="Score"),
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+    )
+    
+    return fig
+
+def create_confusion_matrix(batch_history, selected_batch_id):
+    """Create confusion matrix heatmap for selected batch"""
+    # Find selected batch
+    batch = next(b for b in batch_history['batches'] if b['batch_id'] == selected_batch_id)
+    cm = batch['performance']['confusion_matrix']
+    
+    # Create matrix
+    z = [[cm['true_negative'], cm['false_positive']],
+         [cm['false_negative'], cm['true_positive']]]
+    
+    # Labels
+    x_labels = ['Predicted Bad', 'Predicted Good']
+    y_labels = ['Actual Bad', 'Actual Good']
+    
+    # Annotations
+    annotations = []
+    for i, row in enumerate(z):
+        for j, value in enumerate(row):
+            annotations.append(
+                dict(
+                    x=x_labels[j],
+                    y=y_labels[i],
+                    text=f'<b>{value}</b>',
+                    showarrow=False,
+                    font=dict(color=TEXT_MAIN, size=20, family='monospace')
+                )
+            )
+    
+    fig = go.Figure(data=go.Heatmap(
+        z=z,
+        x=x_labels,
+        y=y_labels,
+        colorscale=[[0, '#1a1f2e'], [0.5, ACCENT_PURPLE], [1, ACCENT_CYAN]],
+        showscale=False,
+        hovertemplate='%{y}<br>%{x}<br>Count: %{z}<extra></extra>'
+    ))
+    
+    fig.update_layout(
+        annotations=annotations,
+        margin=dict(l=20, r=20, t=10, b=10),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        xaxis=dict(side='bottom', showgrid=False, color=TEXT_MUTED),
+        yaxis=dict(showgrid=False, color=TEXT_MUTED),
+        height=280
+    )
+    
+    return fig
+
+def create_classification_report_table(batch_history, selected_batch_id):
+    """Create classification report table for selected batch"""
+    # Find selected batch
+    batch = next(b for b in batch_history['batches'] if b['batch_id'] == selected_batch_id)
+    perf = batch['performance']
+    
+    # Build table data
+    rows = [
+        {
+            'class': 'Bad Credit',
+            'precision': perf['bad_credit']['precision'],
+            'recall': perf['bad_credit']['recall'],
+            'f1_score': perf['bad_credit']['f1_score'],
+            'support': perf['bad_credit']['support']
+        },
+        {
+            'class': 'Good Credit',
+            'precision': perf['good_credit']['precision'],
+            'recall': perf['good_credit']['recall'],
+            'f1_score': perf['good_credit']['f1_score'],
+            'support': perf['good_credit']['support']
+        },
+        {
+            'class': 'Macro Avg',
+            'precision': perf['macro_avg']['precision'],
+            'recall': perf['macro_avg']['recall'],
+            'f1_score': perf['macro_avg']['f1_score'],
+            'support': None
+        },
+        {
+            'class': 'Weighted Avg',
+            'precision': perf['weighted_avg']['precision'],
+            'recall': perf['weighted_avg']['recall'],
+            'f1_score': perf['weighted_avg']['f1_score'],
+            'support': None
+        }
+    ]
+    
+    return rows
+
 # ---------------------------------------------------------------------------
 # 5. REUSABLE UI COMPONENTS
 # ---------------------------------------------------------------------------
@@ -491,7 +715,22 @@ app.layout = html.Div(
                                     "border": "1px solid #222938"
                                 },
                                 children=[
-                                    html.Span("FAIRNESS METRIC: ", style={"color": TEXT_MUTED, "fontSize": "13px", "fontWeight": "600", "marginRight": "10px"}),
+                                    html.Span("BATCH SELECTOR: ", style={"color": TEXT_MUTED, "fontSize": "13px", "fontWeight": "600", "marginRight": "10px"}),
+                                    dcc.Dropdown(
+                                        id='batch-selector-dropdown',
+                                        options=[
+                                            {'label': 'Batch 0 (Baseline)', 'value': 'batch_00'},
+                                            {'label': 'Batch 1', 'value': 'batch_01'},
+                                            {'label': 'Batch 2', 'value': 'batch_02'},
+                                            {'label': 'Batch 3 (Drift)', 'value': 'batch_03'},
+                                            {'label': 'Batch 4', 'value': 'batch_04'},
+                                            {'label': 'Batch 5 (Latest)', 'value': 'batch_05'}
+                                        ],
+                                        value='batch_05',
+                                        style={"width": "220px", "display": "inline-block"},
+                                        clearable=False
+                                    ),
+                                    html.Span("FAIRNESS METRIC: ", style={"color": TEXT_MUTED, "fontSize": "13px", "fontWeight": "600", "marginLeft": "30px", "marginRight": "10px"}),
                                     dcc.Dropdown(
                                         id='fairness-metric-dropdown',
                                         options=[
@@ -567,6 +806,27 @@ app.layout = html.Div(
                             "Alert Timeline (Filter Above)", 
                             'alert-timeline-chart'
                         ), lg=12, md=12),
+                    ]
+                ),
+                
+                # Confusion Matrix and Classification Report
+                dbc.Row(
+                    className="g-4 mb-4",
+                    children=[
+                        dbc.Col(create_graph_card(
+                            "Confusion Matrix (Selected Batch)", 
+                            'confusion-matrix-chart'
+                        ), lg=5, md=12),
+                        dbc.Col(
+                            html.Div(
+                                id='classification-report-container',
+                                style={
+                                    "backgroundColor": CARD_BG, "borderRadius": "16px", "padding": "24px",
+                                    "border": "1px solid #222938", "height": "100%", "boxShadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2)"
+                                }
+                            ),
+                            lg=7, md=12
+                        ),
                     ]
                 ),
                 
@@ -778,6 +1038,88 @@ def update_alert_table(data, severity_filter):
                             )
                         ], style={"borderBottom": "1px solid #1c2130"})
                         for alert in alerts_df.head(10).to_dict('records')
+                    ])
+                ],
+                borderless=True,
+                hover=True,
+                style={"verticalAlign": "middle"}
+            )
+        )
+    ]
+
+@app.callback(
+    Output('confusion-matrix-chart', 'figure'),
+    [Input('monitoring-data-store', 'data'),
+     Input('batch-selector-dropdown', 'value')]
+)
+def update_confusion_matrix(data, selected_batch):
+    """Update confusion matrix for selected batch"""
+    if not data:
+        return go.Figure()
+    
+    return create_confusion_matrix(data['batch_history'], selected_batch)
+
+@app.callback(
+    Output('classification-report-container', 'children'),
+    [Input('monitoring-data-store', 'data'),
+     Input('batch-selector-dropdown', 'value')]
+)
+def update_classification_report(data, selected_batch):
+    """Update classification report for selected batch"""
+    if not data:
+        return html.Div("Loading...")
+    
+    rows = create_classification_report_table(data['batch_history'], selected_batch)
+    
+    # Get batch performance summary
+    batch = next(b for b in data['batch_history']['batches'] if b['batch_id'] == selected_batch)
+    
+    return [
+        html.H5(f"Classification Report - {selected_batch.replace('_', ' ').title()}", 
+               style={"color": TEXT_MAIN, "fontWeight": "600", 
+                     "marginBottom": "10px", "fontSize": "16px"}),
+        html.Div([
+            html.Span(f"AUC-ROC: {batch['performance']['auc_roc']:.4f}", 
+                     style={"color": ACCENT_CYAN, "fontSize": "13px", "fontWeight": "600", "marginRight": "20px"}),
+            html.Span(f"Accuracy: {batch['performance']['accuracy']:.2%}", 
+                     style={"color": ACCENT_PURPLE, "fontSize": "13px", "fontWeight": "600"}),
+        ], style={"marginBottom": "20px"}),
+        html.Div(
+            className="table-responsive",
+            children=dbc.Table(
+                [
+                    html.Thead(
+                        html.Tr([
+                            html.Th("CLASS", style={"color": TEXT_MUTED, "borderBottom": "2px solid #222938", "fontSize": "11px", "textTransform": "uppercase"}),
+                            html.Th("PRECISION", style={"color": TEXT_MUTED, "borderBottom": "2px solid #222938", "fontSize": "11px", "textAlign": "center"}),
+                            html.Th("RECALL", style={"color": TEXT_MUTED, "borderBottom": "2px solid #222938", "fontSize": "11px", "textAlign": "center"}),
+                            html.Th("F1-SCORE", style={"color": TEXT_MUTED, "borderBottom": "2px solid #222938", "fontSize": "11px", "textAlign": "center"}),
+                            html.Th("SUPPORT", style={"color": TEXT_MUTED, "borderBottom": "2px solid #222938", "fontSize": "11px", "textAlign": "center"})
+                        ])
+                    ),
+                    html.Tbody([
+                        html.Tr([
+                            html.Td(row['class'], style={"color": TEXT_MAIN, "fontSize": "13px", "fontWeight": "600"}),
+                            html.Td(f"{row['precision']:.4f}", style={
+                                "color": ACCENT_GREEN if row['precision'] >= 0.75 else ACCENT_ORANGE if row['precision'] >= 0.6 else ACCENT_PINK,
+                                "fontSize": "13px", "fontWeight": "600", "textAlign": "center"
+                            }),
+                            html.Td(f"{row['recall']:.4f}", style={
+                                "color": ACCENT_GREEN if row['recall'] >= 0.75 else ACCENT_ORANGE if row['recall'] >= 0.6 else ACCENT_PINK,
+                                "fontSize": "13px", "fontWeight": "600", "textAlign": "center"
+                            }),
+                            html.Td(f"{row['f1_score']:.4f}", style={
+                                "color": ACCENT_GREEN if row['f1_score'] >= 0.75 else ACCENT_ORANGE if row['f1_score'] >= 0.6 else ACCENT_PINK,
+                                "fontSize": "13px", "fontWeight": "600", "textAlign": "center"
+                            }),
+                            html.Td(f"{row['support']}" if row['support'] else "-", style={
+                                "color": TEXT_MUTED, "fontSize": "13px", "textAlign": "center"
+                            })
+                        ], style={
+                            "borderBottom": "2px solid #222938" if 'Avg' in row['class'] else "1px solid #1c2130",
+                            "backgroundColor": "rgba(176, 66, 255, 0.05)" if 'Avg' in row['class'] else "transparent"
+                        })
+                        for row in rows
                     ])
                 ],
                 borderless=True,
