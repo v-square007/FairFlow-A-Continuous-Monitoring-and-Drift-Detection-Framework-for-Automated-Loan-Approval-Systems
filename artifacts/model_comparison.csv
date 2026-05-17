@@ -1,5 +1,5 @@
 Method,accuracy,precision,recall,f1_score,roc_auc
-My Model,0.7733,0.866,0.8,0.8317,0.7799
+Fairflow,0.7733,0.866,0.8,0.8317,0.7799
 Decision Tree,0.6867,0.7788,0.7714,0.7751,0.6302
 Naive Bayes,0.6933,0.736,0.8762,0.8,0.7029
 K-Means,0.7,0.7,1.0,0.8235,

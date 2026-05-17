@@ -146,7 +146,7 @@ def build_comparison_table():
     if hasattr(artifact_model, "predict_proba") or hasattr(artifact_model, "decision_function"):
         try:
             metrics = eval_model(artifact_model, X_test, y_test, threshold=threshold)
-            rows.append({"Method": "My Model", **metrics})
+            rows.append({"Method": "Fairflow", **metrics})
         except Exception as exc:
             raise RuntimeError(f"Failed to evaluate saved model: {exc}")
     else:
